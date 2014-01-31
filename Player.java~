@@ -1,0 +1,11 @@
+//Troy Carson
+
+public class Player
+{
+  public int roll(){
+    int die1 = (int)((Math.random()*6)+1); //rolls the two 6 side'd dice 
+    int die2 = (int)((Math.random()*6)+1);
+    int dieTotal = (die1 + die2); //combines their value
+    return dieTotal; //returns that value to the Player class 
+  }
+}
