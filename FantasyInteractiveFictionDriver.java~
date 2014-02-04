@@ -5,5 +5,10 @@ public class FantasyInteractiveFictionDriver
   public static void main(String [] args)
   {
     Scanner keyboard = new Scanner(System.in);
+    System.out.println("You there, Knight! What is your name?");
+    String userName = keyboard.nextLine();
+    System.out.println("Aye, I've heard of you, you've been trying to gain influence throughout the kingdom. I'm Captain Myzard of the Guard, and if you want to to make a real name for yourself, you can start by going over to Shatter Sands Tower to the East of here, trouble with bandits I hear, and we havn't the men to spare with the Civil War on our doorsteps, so we need our men in the cities to keep order and remind the people the King rules these lands.");
+    System.out.println("");
+    System.out.println("Enter '1' to agree to go to Shatter Sands Tower. Enter '2' to ask more about the rebellion. Enter '3' to attack Captain Myzard and declare yourself with the rebellion.");
   }
 }

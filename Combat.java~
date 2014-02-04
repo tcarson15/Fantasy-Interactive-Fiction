@@ -1,0 +1,6 @@
+//By Troy Carson
+public class Combat{
+  public static int combat(int warrior1, int warrior2){
+    
+  }
+}
