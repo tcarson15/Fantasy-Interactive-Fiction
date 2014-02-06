@@ -20,4 +20,8 @@ public class FantasyInteractiveFictionDriver
     if (keyboard.nextLine() == 3){
     }
   }
+  public static combat(Character p1, Character p2){
+    
+    }
+  }
 }

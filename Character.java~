@@ -6,5 +6,5 @@ public class Character{
   int toughness = 0;
   int armorRating = 0;
   int defense = (toughness + armorRating);
-  
+
 }
