@@ -22,6 +22,10 @@ public class Character{
     armorClass = ac;
     name = n;
   }
+  public selectMove(){//for combat 1=melee 2=ranged 3=skip
+    
+  }
+  
   public void getHealth(){return health;}
   public void getDexterity(){return dexterity;}
   public void getStrength(){return strength;}
@@ -32,4 +36,10 @@ public class Character{
   public void minusHealth(int subtractedHealth){health -= subtractedHealth;}
   public void addDexterity(int additionalDexterity){dexterity += additionalDexterity;}
   public void minusDexterity(intsubtractedDexterity){dexterity -= subtractedDexterity;}
+  public void addStrength(int additionalStrength){strength += additionalStrength;}
+  public void minusStrength(int subtractedStrength){strength -= subtractedStrength;}
+  public void addRanged(int additionalRanged){ranged += additionalRanged;}
+  public void minusRanged(int subtractedRanged){ranged -= subtractedRanged;}
+  public void addArmorClass(int additionalArmorHealth){armorClass += additionalArmorClass;}
+  public void minusArmorClass(int subtractedArmorClass){armorClass -= subtractedArmorClass;}
 }
