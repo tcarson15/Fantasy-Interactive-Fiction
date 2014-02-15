@@ -1,9 +1,7 @@
 //by Troy Carson
 import java.util.Scanner; 
-public class FantasyInteractiveFictionDriver
-{
-  public static void main(String [] args)
-  {
+public class FantasyInteractiveFictionDriver{
+  public static void main(String [] args){
     Scanner keyboard = new Scanner(System.in);
     System.out.println("You there, Knight! What is your name?");
     String userName = keyboard.nextLine();
@@ -21,7 +19,16 @@ public class FantasyInteractiveFictionDriver
     }
   }
   public static combat(Character p1, Character p2){
-    
+    boolean turn = (p1.getDextarity+(int)math.random(20)+1)>p2.getDextarity+(int)math.random(20)+1);
+    while(!hasWon){
+      if(turn){
+        int move = p1.selectMove;
+        if(move==1){
+          if((int)math.random(20)+1>=p2.getArmorClass) ps.minusHealth(p1.getStrength)
+        }
+        else if(move==2)
+        else if(Move==3)
+      }
     }
   }
 }
