@@ -18,17 +18,32 @@ public class FantasyInteractiveFictionDriver{
     if (keyboard.nextLine() == 3){
     }
   }
-  public static combat(Character p1, Character p2){
-    boolean turn = (p1.getDextarity+(int)math.random(20)+1)>p2.getDextarity+(int)math.random(20)+1);
+  public static boolean combat(Character p1, Character p2){
+    boolean hasWon = false;
+    boolean turn = (p1.getDextarity+(int)math.random(20)+1)>(p2.getDextarity+(int)math.random(20)+1); //determine which player attacks first
     while(!hasWon){
       if(turn){
         int move = p1.selectMove;
-        if(move==1){
-          if((int)math.random(20)+1>=p2.getArmorClass) ps.minusHealth(p1.getStrength)
+        if(move==1){ //melee
+          if((int)math.random(20)+1>=p2.getArmorClass) p2.minusHealth(p1.getStrength);
         }
-        else if(move==2)
-        else if(Move==3)
+        else if(move==2){ //ranged
+          if((int)math.random(20)+1>=p2.getArmorClass) p2.minusHealth(p1.getRanged);
+        }
+        else if(Move==3){ //skip
+        turn = false;
+        }
+        
+        if(!turn){
+        int move = p1.selectMove;
+        if(move==1){ //melee
+          if((int)math.random(20)+1>=p1.getArmorClass) p1.minusHealth(p2.getStrength);
+        }
+        else if(move==2){ //ranged
+          if((int)math.random(20)+1>=p1.getArmorClass) p1.minusHealth(p2.getRanged);
+        }
       }
     }
   }
+}
 }
