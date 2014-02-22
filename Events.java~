@@ -1,4 +1,20 @@
 //by Troy Carson
+package Fantasy-Interactive-Fiction;
+import Fantasy-Interactive-Fiction.FantasyInteractiveFictionDriver;
+import Fantasy-Interactive-Fiction.Character;
 public class Events{
+  if (event == 1){
+  }
+  if (event == 2){
+    if (FantasyInteractiveFictionDriver.combat(Player, CaptainMyzard)){
+      event = 3;
+    }
+    else event = 99;
+  }
+  if (event == 3){
+  }
   
+  if (event == 99){
+    System.out.println("You have died!");
+  }
 }
