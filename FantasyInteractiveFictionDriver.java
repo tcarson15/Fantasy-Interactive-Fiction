@@ -48,15 +48,18 @@ public class FantasyInteractiveFictionDriver{
             if((int)math.random(20)+1>=p2.getArmorClass) p2.minusHealth(p1.getStrength);
             if(p2.health <= 0){
               enemyStillAlive = false;
+            else turn = false;
             }
           }
           else if(move==2){ //ranged
             if((int)math.random(20)+1>=p2.getArmorClass) p2.minusHealth(p1.getRanged);
             if(p2.health <= 0){
               enemyStillAlive = false;
+            else turn = false;
             }
           }
-          else if(Move==3){ //skip
+          else if(Move==3){ //take health potion
+            p1.addHealth((int)((Math.random()*11)+5));
             turn = false;
           }
           
@@ -66,14 +69,17 @@ public class FantasyInteractiveFictionDriver{
               if((int)math.random(20)+1>=p1.getArmorClass) p1.minusHealth(p2.getStrength);
               if(p1.health <= 0){
                 stillAlive = false;
+              else turn = false;
               }
             }
             else if(move==2){ //ranged
               if((int)math.random(20)+1>=p1.getArmorClass) p1.minusHealth(p2.getRanged);
               if(p1.health <= 0){
                 stillAlive = false;
+              else turn = false;
               }
-              else if(Move==3){ //skip
+              else if(Move==3){ //take health potion
+                p2.addHealth((int)((Math.random()*11)+5));
                 turn = false;
               }
             }

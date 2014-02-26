@@ -1,91 +1,57 @@
 //by Troy Carson
-import java.util.Scanner; 
-public class FantasyInteractiveFictionDriver{
-  public static void main(String [] args){
-    Scanner keyboard = new Scanner(System.in);
-    public int event = 0;
-    System.out.println("You there, Knight! What is your name?");
-    String userName = keyboard.nextLine();
-    Character Player = new Character(userName);
-    player.addHealth(10);
-    player.addDexterity(10);
-    player.addStrength(10);
-    player.addRanged(10);
-    System.out.println("Aye, I've heard of you, you've been trying to gain influence throughout the kingdom. I'm Captain Myzard of the Guard, and if you want to to make a real name for yourself, you can start by going over to Shatter Sands Tower to the East of here, trouble with bandits I hear, and we havn't the men to spare with the Civil War on our doorsteps, so we need our men in the cities to keep order and remind the people the King rules these lands.");
+package Fantasy-Interactive-Fiction;
+import Fantasy-Interactive-Fiction.FantasyInteractiveFictionDriver;
+import Fantasy-Interactive-Fiction.Character;
+public class Events{
+  if (event == 1){
+    System.out.println("You arrive at Shatter Sands tower just as the sun rises tangent to the horizon the next day. You find a small garrison of no more than a dozen royal troops stationed there. Nearly every man you see is wounded or sullen. A man rises to greet you, his left arm hoisted in a tight bandage to his chest.");
     System.out.println("");
-    System.out.println("Enter '1' to agree to go to Shatter Sands Tower. Enter '2' to ask more about the rebellion. Enter '3' to attack Captain Myzard and declare yourself with the rebellion.");
-    Character CaptainMyzard = new CustomCharacter(20, 20, 30, 20, 25, "Captain Myzard"); 
+    System.out.println("I'm Sergeant Davin, what are you doing here traveler?");
+    System.out.println("");
+    System.out.println("Enter '1' to tell of how Captain Myzard sent you to aid against the bandits. Enter '2' to draw your sword and attack Sergeant Davin.");
     if (keyboard.nextLine() == 1){
-      event = 1;
-    }
-    if (keyboard.nextLine() == 3){
-      event = 2;
-    }
-    if (keyboard.nextLine() == 2){
-      System.out.println("Well I doubt I could tell you anything you havnt already heard. In short, Darion the Dissolute decided he wanted to rise up against the King in rebbellion, and several thousand smallfolk decided to join him in defiance. No one knows who exactly this 'Darion' is, some say he was a trusted advisor to the King or a General turned renegade. Either way, he's just a man, and a man who needs to die. And it's the Legion that's gonna see to it!");
-      System.out.println("");
-      System.out.println("Enter '1' to agree to go to Shatter Sands Tower.Enter '2' to attack Captain Myzard and declare yourself with the rebellion.");
+      event = 3;
     }
     if (keyboard.nextLine() == 1){
-      
-      event = 1;
+      event = 4;
     }
-    if (keyboard.nextLine() == 2){
-      event = 2;
-    }
-  } 
-  
-  public static boolean combat(Character p1, Character p2){
-    boolean hasWon = false;
-    boolean stillAlive = true;
-    boolean enemyStillAlive = true;
-    if (stillAlive == true && enemyStillAlive == true){
-      boolean turn = (p1.getDextarity+(int)math.random(20)+1)>(p2.getDextarity+(int)math.random(20)+1); //determine which player attacks first
-      while(!hasWon){
-        if(turn){
-          int move = p1.selectMove;
-          if(move==1){ //melee
-            if((int)math.random(20)+1>=p2.getArmorClass) p2.minusHealth(p1.getStrength);
-            if(p2.health <= 0){
-              enemyStillAlive = false;
-            }
-          }
-          else if(move==2){ //ranged
-            if((int)math.random(20)+1>=p2.getArmorClass) p2.minusHealth(p1.getRanged);
-            if(p2.health <= 0){
-              enemyStillAlive = false;
-            }
-          }
-          else if(Move==3){ //skip
-            turn = false;
-          }
-          
-          if(!turn){
-            int move = p1.selectMove;
-            if(move==1){ //melee
-              if((int)math.random(20)+1>=p1.getArmorClass) p1.minusHealth(p2.getStrength);
-              if(p1.health <= 0){
-                stillAlive = false;
-              }
-            }
-            else if(move==2){ //ranged
-              if((int)math.random(20)+1>=p1.getArmorClass) p1.minusHealth(p2.getRanged);
-              if(p1.health <= 0){
-                stillAlive = false;
-              }
-              else if(Move==3){ //skip
-                turn = false;
-              }
-            }
-          }
-        }
-      }
-      if (stillAlive == false){
-        return false;
-        else if enemyStillAlive == false && stillAlive = true{
-          return true;
-        }
-      }
-    }
+    
   }
-}
+  if (event == 2){
+    System.out.println("Enter '1' for a melee attack. Enter '2' for a ranged attack. Enter '3' to take a health potion.);
+    if (FantasyInteractiveFictionDriver.combat(Player, CaptainMyzard)){
+      System.out.println("Against all odd (literally) you have managed to defeat Captain Myzard! Too bad the rest of his guards cut you down immediatly after your victory.");
+      event = 99;
+    }
+    else event = 99;
+  }
+  
+  if (event == 3){
+    Character Bandit = new CustomCharacter(10, 5, 10, 5, 0, "Bandit"); 
+    System.out.println("Ah, good. We could always use the able body, especially now, after our losses. Most of the men are dead or dying, these bandit have never been so bold, attacking so close to cities and trade routes. Sometime soon they'll do something even bigger (hint hint), mark my words.");
+    System.out.println("");
+    System.out.println("You spend the day with the garrison, sharpening your blade, playing dice and sharing stories. But the merrymaking was interupted by a loosed arrow that hit the man next to you, piercing through his gorget. Several dozen men begin charging you, all the while arrows continue to pepper the ground around you. A bandit charges you, a mighty war cry precing his hulking form.");
+    System.out.println("");
+    System.out.println("Enter '1' for a melee attack. Enter '2' for a ranged attack. Enter '3' to take a health potion.);
+    if (FantasyInteractiveFictionDriver.combat(Player, Bandit)){
+      System.out.println("You slay the first bandit, but another attacks you!");
+    }
+    if (FantasyInteractiveFictionDriver.combat(Player, Bandit)){
+      System.out.println("You mange to defeat another bandit, yet more continue to descend down upon you and the few remaining royal troops!"););
+    } 
+    if (FantasyInteractiveFictionDriver.combat(Player, Bandit)){
+      System.out.println("Tou manage to kill another bandit, but as you look up you see them retreating before you. A large host of cavelrymen bearing the royal coat of arms drives back the bandit with lances to their backs.");");
+    }
+    else event = 99;
+  }
+  
+  if (event == 4){
+  }
+  
+  if (event == 5){
+  }
+  
+  if (event == 99){
+    System.out.println("You have died! (n00b)");
+  }
+  }

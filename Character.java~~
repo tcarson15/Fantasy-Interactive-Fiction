@@ -17,7 +17,7 @@ public class Character{
     armorClass = dexterity;
   }
   
-  public Character(int h,int d, int s, int r, int ac, String n){
+  public CustomCharacter(int h,int d, int s, int r, int ac, String n){
     health = h;
     dextarity = d;
     strength = s;
@@ -26,7 +26,7 @@ public class Character{
     name = n;
   }
   
-  public int selectMove(){//for combat 1=melee 2=ranged 3=take health potion
+  public int selectMove(){//for combat 1=melee 2=ranged 3=skip
     if (keyboard.nextLine() == 1){
       return 1;
     }
